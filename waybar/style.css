@@ -8,12 +8,14 @@
     font-weight: 400;
     font-size: 13px;
     min-height: 0;
+    box-sizing: border-box;
 }
 
 window#waybar {
     background: transparent;
     border-bottom: none;
     color: @foreground;
+    min-height: 34px;
 }
 
 #workspaces,
@@ -25,21 +27,25 @@ window#waybar {
 #bluetooth,
 #battery,
 #tray {
-    margin: 5px 3px;
-    padding: 3px 7px;
+    margin: 4px 3px;
+    padding: 0 8px;
     background: @color0;
     border: 1px solid @color8;
     border-radius: 9px;
     color: @foreground;
+    min-height: 24px;
+    line-height: 24px;
 }
 
 #workspaces {
-    padding: 2px 4px;
+    padding: 0 4px;
 }
 
 #workspaces button {
-    padding: 0 4px;
+    padding: 0 5px;
     margin: 0 2px;
+    min-height: 20px;
+    line-height: 20px;
     color: @color8;
     transition: all 120ms ease;
 }
