@@ -15,6 +15,7 @@
             "power-profiles-daemon",
             "network",
             "bluetooth",
+            "pulseaudio",
             "battery"
         ],
         "niri/workspaces": {
@@ -91,6 +92,20 @@
                 ""
             ],
             "tooltip-format": "{capacity}% ({timeTo})"
+        },
+        "pulseaudio": {
+            "format": "{icon}  {volume}%",
+            "format-muted": "󰝟  Muted",
+            "format-icons": {
+                "default": [
+                    "󰕿",
+                    "󰖀",
+                    "󰕾"
+                ]
+            },
+            "scroll-step": 5,
+            "on-click": "alacritty -e wiremix",
+            "on-right-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
         }
     }
 ]

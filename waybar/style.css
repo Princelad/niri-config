@@ -21,6 +21,7 @@ window#waybar {
 #clock,
 #network,
 #power-profiles-daemon,
+#pulseaudio,
 #bluetooth,
 #battery {
     margin: 5px 3px;
@@ -95,6 +96,14 @@ window#waybar.empty #window {
 
 #battery {
     color: @color11;
+}
+
+#pulseaudio {
+    color: @color13;
+}
+
+#pulseaudio.muted {
+    color: @color8;
 }
 
 #battery.warning:not(.charging) {
