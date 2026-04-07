@@ -1,0 +1,20 @@
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://yalter.github.io/niri/Configuration:-Window-Rules
+
+// Firefox: open picture-in-picture windows as floating by default.
+window-rule {
+    match app-id="firefox$" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Firefox extensions often open compact utility windows; float those.
+window-rule {
+    match app-id="firefox$" title="^Extension:"
+    open-floating true
+}
+
+window-rule {
+    geometry-corner-radius 6
+    clip-to-geometry true
+}
