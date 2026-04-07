@@ -48,6 +48,7 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
 - cliphist
 - wl-clipboard
 - swaylock
+- swayidle
 - thunar
 - playerctl
 - brightnessctl
@@ -92,6 +93,13 @@ Core ergonomic bindings are intentionally i3-like:
 - Super+1 through Super+0 focuses workspaces 1 through 10
 
 See binds.kdl for the complete binding list.
+
+## Idle Behavior
+
+- swayidle starts from startup.kdl via scripts/start-swayidle.sh.
+- After 5 minutes idle, the screen locks using scripts/lock-screen.sh.
+- After 15 minutes idle, the system suspends.
+- The screen is always locked before suspend.
 
 ## Script Conventions
 

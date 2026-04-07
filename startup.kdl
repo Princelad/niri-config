@@ -1,5 +1,6 @@
 spawn-sh-at-startup "waybar -c $HOME/.config/niri/waybar/config.jsonc -s $HOME/.config/niri/waybar/style.css"
 spawn-sh-at-startup "mako --config $HOME/.config/niri/mako/config"
 spawn-sh-at-startup "wallpaper=\"$(cat \"$HOME/.cache/wal/wal\" 2>/dev/null || true)\"; if [ -n \"$wallpaper\" ] && [ -f \"$wallpaper\" ]; then exec swaybg -i \"$wallpaper\" -m fill; fi"
+spawn-sh-at-startup "~/.config/niri/scripts/start-swayidle.sh"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store > /dev/null 2>&1 &"
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store > /dev/null 2>&1 &"
