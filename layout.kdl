@@ -51,7 +51,6 @@ layout {
         urgent-color "#9b0000"
     }
 
-    // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
         on
