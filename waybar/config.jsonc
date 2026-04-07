@@ -12,6 +12,7 @@
             "clock"
         ],
         "modules-right": [
+            "tray",
             "power-profiles-daemon",
             "network",
             "bluetooth",
@@ -106,6 +107,10 @@
             "scroll-step": 5,
             "on-click": "alacritty -e wiremix",
             "on-right-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "tray": {
+            "icon-size": 21,
+            "spacing": 10
         }
     }
 ]
