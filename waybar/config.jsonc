@@ -1,0 +1,96 @@
+[
+    {
+        "layer": "top",
+        "position": "top",
+        "height": 34,
+        "spacing": 8,
+        "modules-left": [
+            "niri/workspaces",
+            "niri/window"
+        ],
+        "modules-center": [
+            "clock"
+        ],
+        "modules-right": [
+            "power-profiles-daemon",
+            "network",
+            "bluetooth",
+            "battery"
+        ],
+        "niri/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "",
+                "default": ""
+            },
+            "on-click": "activate"
+        },
+        "niri/window": {
+            "format": "{title}",
+            "rewrite": {
+                "^$": "Desktop"
+            },
+            "max-length": 70,
+            "separate-outputs": true
+        },
+        "clock": {
+            "format": "{:%A, %d %b %Y  %I:%M %p}",
+            "tooltip-format": "<big>{:%A}</big>\n<tt>{calendar}</tt>",
+            "calendar": {
+                "mode": "month",
+                "mode-mon-col": 3,
+                "weeks-pos": "right",
+                "on-scroll": 1,
+                "format": {
+                    "months": "<b>{}</b>",
+                    "days": "<b>{}</b>",
+                    "weeks": "<b>W{}</b>",
+                    "weekdays": "<b>{}</b>",
+                    "today": "<b><u>{}</u></b>"
+                }
+            }
+        },
+        "network": {
+            "format-wifi": "  {essid}",
+            "format-ethernet": "󰈀  {ipaddr}",
+            "format-linked": "󰈀  {ifname} (no IP)",
+            "format-disconnected": "󰖪  Offline",
+            "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+            "on-click": "alacritty -e wlctl"
+        },
+        "power-profiles-daemon": {
+            "format": "{icon}",
+            "tooltip-format": "Power mode: {profile}",
+            "format-icons": {
+                "performance": "",
+                "balanced": "",
+                "power-saver": ""
+            }
+        },
+        "bluetooth": {
+            "format": "",
+            "format-disabled": "󰂲",
+            "format-connected": "  {device_alias}",
+            "tooltip-format": "{controller_alias}\n{num_connections} connected",
+            "on-click": "alacritty -e bluetui"
+        },
+        "battery": {
+            "states": {
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{icon}  {capacity}%",
+            "format-charging": "  {capacity}%",
+            "format-plugged": "  {capacity}%",
+            "format-full": "  100%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "tooltip-format": "{capacity}% ({timeTo})"
+        }
+    }
+]
