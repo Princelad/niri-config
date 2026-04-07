@@ -1,3 +1,7 @@
+// Input device configuration.
+// Find the full list of options on the wiki:
+// https://yalter.github.io/niri/Configuration:-Input
+
 input {
     keyboard {
         xkb {
