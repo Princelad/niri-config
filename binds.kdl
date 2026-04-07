@@ -13,7 +13,7 @@ binds {
     Super+Shift+B hotkey-overlay-title="Bluetooth TUI: bluetui" { spawn "alacritty" "-e" "bluetui"; }
     Super+Shift+W hotkey-overlay-title="Wi-Fi TUI: wlctl" { spawn "alacritty" "-e" "wlctl"; }
     Super+Shift+A hotkey-overlay-title="Audio Mixer TUI: wiremix" { spawn "alacritty" "-e" "wiremix"; }
-    Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "~/.config/niri/scripts/lock-screen.sh"; }
     Super+O { toggle-overview; }
 
     XF86AudioRaiseVolume { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }

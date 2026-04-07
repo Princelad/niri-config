@@ -31,6 +31,7 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
 - Scripts:
   - scripts/launcher.sh
   - scripts/clipboard-menu.sh
+  - scripts/lock-screen.sh
   - scripts/session-menu.sh
   - scripts/power-profile-menu.sh
   - scripts/wallpaper-selector.sh
@@ -51,6 +52,7 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
 - playerctl
 - brightnessctl
 - powerprofilesctl
+- swaylock
 - Optional but referenced by binds:
   - firefox
   - spotify
@@ -102,5 +104,6 @@ Scripts in scripts/ follow:
 ## Known Pitfalls
 
 - config.kdl includes /home/pixel/.cache/wal/colors-niri.kdl directly. If pywal files are missing, startup can fail.
+- scripts/lock-screen.sh uses swaylock with a minimal blurred clock and no ring indicator.
 - scripts/session-menu.sh uses systemctl and assumes systemd.
 - scripts/wallpaper-selector.sh expects wal and a wallpaper directory via WALLPAPERDIR or ~/Wallpapers.

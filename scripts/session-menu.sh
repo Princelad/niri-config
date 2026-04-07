@@ -14,7 +14,7 @@ choice=$(printf "%s\n" "${options}" | fuzzel --dmenu --config "${HOME}/.config/n
 
 case "${choice}" in
     Lock)
-        swaylock
+        "${HOME}/.config/niri/scripts/lock-screen.sh"
         ;;
     Logout)
         niri msg action quit
