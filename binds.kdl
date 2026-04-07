@@ -6,6 +6,12 @@ binds {
     Super+Escape hotkey-overlay-title="Session Menu" { spawn-sh "~/.config/niri/scripts/session-menu.sh"; }
     Super+Shift+P hotkey-overlay-title="Power Profile Menu" { spawn-sh "~/.config/niri/scripts/power-profile-menu.sh"; }
     Super+W hotkey-overlay-title="Wallpaper Selector" { spawn-sh "~/.config/niri/scripts/wallpaper-selector.sh"; }
+    Super+E hotkey-overlay-title="File Manager: thunar" { spawn "thunar"; }
+    Super+B hotkey-overlay-title="Browser: firefox" { spawn "firefox"; }
+    Super+M hotkey-overlay-title="Music: spotify" { spawn "spotify"; }
+    Super+Shift+B hotkey-overlay-title="Bluetooth TUI: bluetui" { spawn "alacritty" "-e" "bluetui"; }
+    Super+Shift+W hotkey-overlay-title="Wi-Fi TUI: wlctl" { spawn "alacritty" "-e" "wlctl"; }
+    Super+Shift+A hotkey-overlay-title="Audio Mixer TUI: wiremix" { spawn "alacritty" "-e" "wiremix"; }
     Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+O { toggle-overview; }
 
@@ -35,11 +41,19 @@ binds {
     Super+J { focus-window-down; }
     Super+K { focus-window-up; }
     Super+L { focus-column-right; }
+    Super+Left { focus-column-left; }
+    Super+Down { focus-window-down; }
+    Super+Up { focus-window-up; }
+    Super+Right { focus-column-right; }
 
     Super+Ctrl+H { move-column-left; }
     Super+Ctrl+J { move-window-down; }
     Super+Ctrl+K { move-window-up; }
     Super+Ctrl+L { move-column-right; }
+    Super+Ctrl+Left { move-column-left; }
+    Super+Ctrl+Down { move-window-down; }
+    Super+Ctrl+Up { move-window-up; }
+    Super+Ctrl+Right { move-column-right; }
 
     Super+1 { focus-workspace 1; }
     Super+2 { focus-workspace 2; }
@@ -63,6 +77,8 @@ binds {
     Super+Shift+9 { move-column-to-workspace 9; }
     Super+Shift+0 { move-column-to-workspace 10; }
 
+    Super+Shift+WheelScrollDown cooldown-ms=150 { focus-column-right; }
+    Super+Shift+WheelScrollUp cooldown-ms=150 { focus-column-left; }
     Super+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
     Super+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
     Super+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
