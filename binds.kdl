@@ -2,7 +2,10 @@ binds {
     Super+Slash { show-hotkey-overlay; }
 
     Super+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Super+P hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Super+P hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "~/.config/niri/scripts/launcher.sh"; }
+    Super+Escape hotkey-overlay-title="Session Menu" { spawn-sh "~/.config/niri/scripts/session-menu.sh"; }
+    Super+Shift+P hotkey-overlay-title="Power Profile Menu" { spawn-sh "~/.config/niri/scripts/power-profile-menu.sh"; }
+    Super+W hotkey-overlay-title="Wallpaper Selector" { spawn-sh "~/.config/niri/scripts/wallpaper-selector.sh"; }
     Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+O { toggle-overview; }
 
