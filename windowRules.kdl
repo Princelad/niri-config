@@ -18,3 +18,8 @@ window-rule {
     geometry-corner-radius 6
     clip-to-geometry true
 }
+
+window-rule {
+    match is-active=false
+    opacity 0.92
+}
