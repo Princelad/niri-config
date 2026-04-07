@@ -3,6 +3,7 @@ binds {
 
     Super+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Super+P hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "~/.config/niri/scripts/launcher.sh"; }
+    Super+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/.config/niri/scripts/clipboard-menu.sh"; }
     Super+Escape hotkey-overlay-title="Session Menu" { spawn-sh "~/.config/niri/scripts/session-menu.sh"; }
     Super+Shift+P hotkey-overlay-title="Power Profile Menu" { spawn-sh "~/.config/niri/scripts/power-profile-menu.sh"; }
     Super+W hotkey-overlay-title="Wallpaper Selector" { spawn-sh "~/.config/niri/scripts/wallpaper-selector.sh"; }

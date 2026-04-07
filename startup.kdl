@@ -1,3 +1,5 @@
 spawn-sh-at-startup "waybar -c $HOME/.config/niri/waybar/config.jsonc -s $HOME/.config/niri/waybar/style.css"
 spawn-sh-at-startup "mako --config $HOME/.config/niri/mako/config"
 spawn-sh-at-startup "swaybg -i $HOME/.cache/wal/colorschemes/wallpaper -m fill"
+spawn-sh-at-startup "pgrep -f 'wl-paste --type text --watch cliphist store' >/dev/null || wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup "pgrep -f 'wl-paste --type image --watch cliphist store' >/dev/null || wl-paste --type image --watch cliphist store"

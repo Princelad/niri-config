@@ -7,7 +7,7 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
 - Modular Niri setup with focused files for input, layout, binds, startup, and rules.
 - i3-style Super-key ergonomics for common workflows.
 - Wallpaper-driven colors through pywal, shared across Niri, Waybar, terminal, launcher, and notifications.
-- Utility scripts for launcher, session actions, power profiles, and wallpaper selection.
+- Utility scripts for launcher, clipboard history, session actions, power profiles, and wallpaper selection.
 
 ## Workspace Layout
 
@@ -30,6 +30,7 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
   - mako/config
 - Scripts:
   - scripts/launcher.sh
+  - scripts/clipboard-menu.sh
   - scripts/session-menu.sh
   - scripts/power-profile-menu.sh
   - scripts/wallpaper-selector.sh
@@ -43,6 +44,8 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
 - fuzzel
 - alacritty
 - pywal (wal)
+- cliphist
+- wl-clipboard
 - swaylock
 - thunar
 - playerctl
@@ -82,6 +85,7 @@ Core ergonomic bindings are intentionally i3-like:
 
 - Super+Return opens terminal
 - Super+P opens launcher
+- Super+V opens clipboard history menu
 - Super+Shift+Q closes window
 - Super+1 through Super+0 focuses workspaces 1 through 10
 
