@@ -18,7 +18,6 @@ if command -v swaylock >/dev/null 2>&1; then
         --inside-color 00000000 \
         --key-hl-color 00000000 \
         --effect-blur 7x5 \
-        --effect-greyscale \
         --effect-vignette 0.4:0.7
 fi
 
