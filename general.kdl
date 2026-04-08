@@ -5,6 +5,7 @@ screenshot-path null
 environment {
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_STYLE_OVERRIDE "kvantum"
 }
 
 cursor {
