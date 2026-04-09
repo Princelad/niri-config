@@ -151,14 +151,14 @@ window#waybar.empty #window {
 }
 
 /* ── Tray drawer (nested inside group/system) ───────────────────────────── */
-#group-tray {
+#custom-tray {
     margin: 0;
     padding: 0;
     background: transparent;
     border: none;
 }
 
-#group-tray>revealer>box>box>button {
+#custom-tray>revealer>box>box>button {
     min-width: 24px;
     padding: 0 4px;
 }

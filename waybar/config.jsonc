@@ -54,7 +54,7 @@
         "group/system": {
             "orientation": "inherit",
             "modules": [
-                "group/tray",
+                "group/custom-tray",
                 "power-profiles-daemon",
                 "network",
                 "bluetooth",
@@ -63,7 +63,7 @@
             ]
         },
         // ── Tray drawer (nested inside group/system) ──────────────────────
-        "group/tray": {
+        "group/custom-tray": {
             "orientation": "inherit",
             "drawer": {
                 "transition-duration": 300,
