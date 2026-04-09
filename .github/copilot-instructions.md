@@ -38,6 +38,11 @@
 - When adding external command dependencies in binds/scripts, document them inline with a short comment only when non-obvious.
 - Keep startup commands in `startup.kdl`; keep interactive menus in `scripts/`.
 
+## Source Priority
+- For behavior or configuration changes, prefer official wiki/documentation as the source of truth.
+- Treat memory notes as secondary hints; if memory conflicts with docs, follow docs.
+- When syntax or semantics are uncertain, verify with upstream docs before editing files.
+
 ## Pitfalls
 - `scripts/session-menu.sh` assumes systemd (`systemctl ...`).
 - `scripts/wallpaper-selector.sh` assumes `wal` and a wallpaper directory (`$WALLPAPERDIR` or `~/Wallpapers`).
