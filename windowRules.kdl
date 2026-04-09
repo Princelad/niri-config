@@ -2,6 +2,17 @@
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
+workspace "Primary"
+workspace "Secondary"
+workspace "Spotify"
+
+window-rule {
+    match app-id="^Spotify$"
+    open-maximized true
+    open-focused true
+    open-on-workspace "Spotify"
+}
+
 // Firefox: open picture-in-picture windows as floating by default.
 window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"

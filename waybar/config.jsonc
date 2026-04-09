@@ -18,6 +18,9 @@
         "niri/workspaces": {
             "format": "{icon}",
             "format-icons": {
+                "Primary": "I",
+                "Secondary": "II",
+                "Spotify": "",
                 "active": "",
                 "default": ""
             },
