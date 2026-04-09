@@ -1,5 +1,6 @@
 @import url("/home/pixel/.cache/wal/colors-waybar.css");
 
+/* ── Reset ─────────────────────────────────────────────────────────────── */
 * {
     border: none;
     border-radius: 0;
@@ -10,31 +11,51 @@
     min-height: 0;
 }
 
+/* ── Bar ────────────────────────────────────────────────────────────────── */
 window#waybar {
     background: transparent;
-    border-bottom: none;
     color: @foreground;
     min-height: 34px;
 }
 
+/* ── Shared pill style ──────────────────────────────────────────────────── */
 #workspaces,
 #window,
 #clock,
-#network,
-#power-profiles-daemon,
-#pulseaudio,
-#bluetooth,
-#battery,
-#tray {
+#system {
     margin: 4px 3px;
     padding: 0 8px;
-    background: @color0;
+    background: @background;
     border: 1px solid @color8;
     border-radius: 9px;
     color: @foreground;
     min-height: 24px;
 }
 
+/* GTK child box — carries the actual drawn surface, must also be coloured  */
+#system>box {
+    background: @background;
+    border-radius: 9px;
+    padding: 0 4px;
+    color: @foreground;
+}
+
+/* ── Module padding inside group/system ─────────────────────────────────── */
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#bluetooth,
+#battery {
+    padding: 0 6px;
+    min-height: 24px;
+}
+
+#tray {
+    padding: 0 6px;
+    min-height: 24px;
+}
+
+/* ── Workspaces ─────────────────────────────────────────────────────────── */
 #workspaces {
     padding: 0 4px;
 }
@@ -56,15 +77,17 @@ window#waybar {
     color: @color13;
 }
 
+/* ── Window title ───────────────────────────────────────────────────────── */
 #window {
     color: @color7;
 }
 
 window#waybar.empty #window {
-    background-color: transparent;
+    background: transparent;
     border: none;
 }
 
+/* ── Module colours ─────────────────────────────────────────────────────── */
 #network {
     color: @color10;
 }
@@ -102,18 +125,6 @@ window#waybar.empty #window {
     color: @color11;
 }
 
-#pulseaudio {
-    color: @color13;
-}
-
-#pulseaudio.muted {
-    color: @color8;
-}
-
-#tray {
-    color: @color7;
-}
-
 #battery.warning:not(.charging) {
     color: @color3;
 }
@@ -127,6 +138,43 @@ window#waybar.empty #window {
     color: @color2;
 }
 
+#pulseaudio {
+    color: @color13;
+}
+
+#pulseaudio.muted {
+    color: @color8;
+}
+
+#tray {
+    color: @color8;
+}
+
+/* ── Tray drawer (nested inside group/system) ───────────────────────────── */
+#group-tray {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+#group-tray>revealer>box>box>button {
+    min-width: 24px;
+    padding: 0 4px;
+}
+
+#custom-tray-arrow {
+    color: @color8;
+    padding: 0 6px;
+    font-size: 14px;
+    transition: all 120ms ease;
+}
+
+#group-tray.open #custom-tray-arrow {
+    color: @color5;
+}
+
+/* ── Tooltip ────────────────────────────────────────────────────────────── */
 tooltip {
     background: @background;
     border: 1px solid @color8;

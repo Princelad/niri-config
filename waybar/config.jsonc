@@ -12,13 +12,9 @@
             "clock"
         ],
         "modules-right": [
-            "tray",
-            "power-profiles-daemon",
-            "network",
-            "bluetooth",
-            "pulseaudio",
-            "battery"
+            "group/system"
         ],
+        // ── Workspaces ────────────────────────────────────────────────────
         "niri/workspaces": {
             "format": "{icon}",
             "format-icons": {
@@ -27,6 +23,7 @@
             },
             "on-click": "activate"
         },
+        // ── Window title ──────────────────────────────────────────────────
         "niri/window": {
             "format": "{title}",
             "rewrite": {
@@ -35,6 +32,7 @@
             "max-length": 70,
             "separate-outputs": true
         },
+        // ── Clock ─────────────────────────────────────────────────────────
         "clock": {
             "format": "{:%A, %d %b %Y  %I:%M %p}",
             "tooltip-format": "<big>{:%A}</big>\n<tt>{calendar}</tt>",
@@ -52,16 +50,54 @@
                 }
             }
         },
+        // ── System group (right pill) ─────────────────────────────────────
+        "group/system": {
+            "orientation": "inherit",
+            "modules": [
+                "group/tray",
+                "power-profiles-daemon",
+                "network",
+                "bluetooth",
+                "pulseaudio",
+                "battery"
+            ]
+        },
+        // ── Tray drawer (nested inside group/system) ──────────────────────
+        "group/tray": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 300,
+                "transition-left-to-right": false,
+                "children-class": "not-homes"
+            },
+            "modules": [
+                "custom/tray-arrow",
+                "tray"
+            ]
+        },
+        "custom/tray-arrow": {
+            "exec": "echo '{\"text\": \"\", \"class\": \"closed\"}'",
+            "format": "{}",
+            "tooltip": false,
+            "return-type": "json"
+        },
+        "tray": {
+            "icon-size": 18,
+            "spacing": 8,
+            "show-passive-items": false,
+            "reverse-direction": true
+        },
+        // ── Modules ───────────────────────────────────────────────────────
         "network": {
-            "format-wifi": "  {essid}",
-            "format-ethernet": "󰈀  {ipaddr}",
-            "format-linked": "󰈀  {ifname} (no IP)",
+            "format-wifi": " {essid}",
+            "format-ethernet": "󰈀 {ipaddr}",
+            "format-linked": "󰈀 {ifname} (no IP)",
             "format-disconnected": "󰖪  Offline",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "alacritty -e wlctl"
         },
         "power-profiles-daemon": {
-            "format": "{icon}",
+            "format": "{icon} ",
             "tooltip-format": "Power mode: {profile}",
             "format-icons": {
                 "performance": "",
@@ -72,7 +108,7 @@
         "bluetooth": {
             "format": "",
             "format-disabled": "󰂲",
-            "format-connected": "  {device_alias}",
+            "format-connected": " {device_alias}",
             "tooltip-format": "{controller_alias}\n{num_connections} connected",
             "on-click": "alacritty -e bluetui"
         },
@@ -81,10 +117,10 @@
                 "warning": 30,
                 "critical": 15
             },
-            "format": "{icon}  {capacity}%",
-            "format-charging": "  {capacity}%",
-            "format-plugged": "  {capacity}%",
-            "format-full": "  100%",
+            "format": "{icon}{capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": " {capacity}%",
+            "format-full": " 100%",
             "format-icons": [
                 "",
                 "",
@@ -95,7 +131,7 @@
             "tooltip-format": "{capacity}% ({timeTo})"
         },
         "pulseaudio": {
-            "format": "{icon}  {volume}%",
+            "format": "{icon} {volume}%",
             "format-muted": "󰝟  Muted",
             "format-icons": {
                 "default": [
@@ -107,10 +143,6 @@
             "scroll-step": 5,
             "on-click": "alacritty -e wiremix",
             "on-right-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-        },
-        "tray": {
-            "icon-size": 21,
-            "spacing": 10
         }
     }
 ]
