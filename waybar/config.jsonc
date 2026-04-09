@@ -24,6 +24,7 @@
                 "active": "",
                 "default": ""
             },
+            "hide-empty": true,
             "on-click": "activate"
         },
         // ── Window title ──────────────────────────────────────────────────
