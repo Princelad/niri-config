@@ -83,7 +83,7 @@
         },
         "tray": {
             "icon-size": 18,
-            "spacing": 8,
+            "spacing": 5,
             "show-passive-items": false,
             "reverse-direction": true
         },
