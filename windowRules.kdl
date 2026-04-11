@@ -2,8 +2,10 @@
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-workspace "Primary"
-workspace "Secondary"
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
 workspace "Spotify"
 
 window-rule {
