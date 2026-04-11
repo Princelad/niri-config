@@ -7,7 +7,7 @@ input {
         xkb {
             layout "us"
             // variant "colemak_dh_ortho"
-            options "compose:ralt,ctrl:nocaps"
+            options "compose:ralt,ctrl:swapcaps"
             // model ""
             // rules ""
             // file "~/.config/keymap.xkb"
