@@ -64,7 +64,7 @@ window#waybar {
     padding: 0 5px;
     margin: 0 2px;
     min-height: 20px;
-    color: @color8;
+    color: @foreground;
     transition: all 120ms ease;
 }
 
@@ -74,12 +74,12 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @color13;
+    color: @color5;
 }
 
 /* ── Window title ───────────────────────────────────────────────────────── */
 #window {
-    color: @color7;
+    color: @foreground;
 }
 
 window#waybar.empty #window {
@@ -88,16 +88,17 @@ window#waybar.empty #window {
 }
 
 /* ── Module colours ─────────────────────────────────────────────────────── */
-#network {
-    color: @color10;
+#network,
+#power-profiles-daemon,
+#bluetooth,
+#battery,
+#pulseaudio,
+#tray {
+    color: @foreground;
 }
 
 #network.disconnected {
-    color: @color9;
-}
-
-#power-profiles-daemon {
-    color: @color14;
+    color: @color8;
 }
 
 #power-profiles-daemon.performance {
@@ -105,24 +106,16 @@ window#waybar.empty #window {
 }
 
 #power-profiles-daemon.balanced {
-    color: @color11;
+    color: @foreground;
 }
 
 #power-profiles-daemon.power-saver {
     color: @color10;
 }
 
-#bluetooth {
-    color: @color12;
-}
-
 #bluetooth.disabled,
 #bluetooth.off {
     color: @color8;
-}
-
-#battery {
-    color: @color11;
 }
 
 #battery.warning:not(.charging) {
@@ -135,18 +128,10 @@ window#waybar.empty #window {
 
 #battery.charging,
 #battery.plugged {
-    color: @color2;
-}
-
-#pulseaudio {
-    color: @color13;
+    color: @color10;
 }
 
 #pulseaudio.muted {
-    color: @color8;
-}
-
-#tray {
     color: @color8;
 }
 
