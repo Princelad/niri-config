@@ -1,14 +1,40 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Helper to extract hex color from pywal colorscheme.json
+# Resolve pywal colors file location.
+get_pywal_file() {
+    local cache_file="${HOME}/.cache/wal/colors.json"
+
+    if [[ -f "$cache_file" ]]; then
+        echo "$cache_file"
+    else
+        echo ""
+    fi
+}
+
+# Helper to extract hex color from pywal colors.json
 get_pywal_color() {
     local color_name="$1"
     local default_color="${2:-ffffff}"
+    local wal_file
+    wal_file="$(get_pywal_file)"
 
-    local wal_file="${HOME}/.config/wal/colorscheme.json"
-    if [[ -f "$wal_file" ]]; then
+    if [[ -n "$wal_file" ]]; then
         jq -r ".colors.\"$color_name\" // \"#${default_color}\"" "$wal_file" 2>/dev/null | sed 's/#//' || echo "$default_color"
+    else
+        echo "$default_color"
+    fi
+}
+
+# Helper to extract foreground/cursor/background from pywal special section.
+get_pywal_special_color() {
+    local special_name="$1"
+    local default_color="${2:-ffffff}"
+    local wal_file
+    wal_file="$(get_pywal_file)"
+
+    if [[ -n "$wal_file" ]]; then
+        jq -r ".special.\"$special_name\" // \"#${default_color}\"" "$wal_file" 2>/dev/null | sed 's/#//' || echo "$default_color"
     else
         echo "$default_color"
     fi
@@ -27,10 +53,10 @@ if ! command -v jq >/dev/null 2>&1; then
 fi
 
 # Extract colors from pywal (or use sensible defaults)
-TEXT_COLOR=$(get_pywal_color "color7" "ffffff")           # Foreground/text
+TEXT_COLOR=$(get_pywal_special_color "foreground" "ffffff") # Foreground/text
 ACCENT_COLOR=$(get_pywal_color "color4" "00bfff")         # Highlight color
 ERROR_COLOR=$(get_pywal_color "color1" "ff0000")           # Error/wrong color
-BACKGROUND_COLOR=$(get_pywal_color "color0" "000000")      # Background
+BACKGROUND_COLOR=$(get_pywal_special_color "background" "000000") # Background
 
 # Execute swaylock with pywal-integrated colors
 exec swaylock \
