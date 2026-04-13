@@ -18,10 +18,10 @@
         "niri/workspaces": {
             "format": "{icon}",
             "format-icons": {
-                "1": "I",
-                "2": "II",
-                "3": "III",
-                "4": "IV",
+                "1": "一",
+                "2": "二",
+                "3": "三",
+                "4": "四",
                 "Spotify": "",
                 "default": ""
             },
