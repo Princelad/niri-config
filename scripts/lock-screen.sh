@@ -76,5 +76,4 @@ exec swaylock \
     --key-hl-color "$ACCENT_COLOR" \
     --bs-hl-color "$ERROR_COLOR" \
     --effect-blur 7x5 \
-    --effect-vignette 0.4:0.7 \
-    --fade-in 0.2
+    --effect-vignette 0.4:0.7
