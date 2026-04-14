@@ -7,7 +7,7 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
 - Modular Niri setup with focused files for input, layout, binds, startup, and rules.
 - i3-style Super-key ergonomics for common workflows.
 - Wallpaper-driven colors through pywal, shared across Niri, Waybar, terminal, launcher, and notifications.
-- Utility scripts for launcher, clipboard history, session actions, power profiles, and wallpaper selection.
+- Utility scripts for launcher, clipboard history, session actions, power profiles, DNS switching, and wallpaper selection.
 
 ## Workspace Layout
 
@@ -34,6 +34,7 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
   - scripts/lock-screen.sh
   - scripts/session-menu.sh
   - scripts/power-profile-menu.sh
+  - scripts/dns-menu.sh
   - scripts/wallpaper-selector.sh
 
 ## Requirements
@@ -54,6 +55,7 @@ Personal Niri desktop configuration with modular KDL files, Waybar, Mako, Fuzzel
 - brightnessctl
 - powerprofilesctl
 - swaylock
+- networkmanager (nmcli)
 - Optional but referenced by binds:
   - firefox
   - spotify
@@ -89,6 +91,7 @@ Core ergonomic bindings are intentionally i3-like:
 - Super+Return opens terminal
 - Super+P opens launcher
 - Super+V opens clipboard history menu
+- Super+Shift+D opens DNS menu
 - Super+Shift+Q closes window
 - Super+1 through Super+0 focuses workspaces 1 through 10
 
@@ -114,4 +117,5 @@ Scripts in scripts/ follow:
 - config.kdl includes /home/pixel/.cache/wal/colors-niri.kdl directly. If pywal files are missing, startup can fail.
 - scripts/lock-screen.sh uses swaylock with a minimal blurred clock and no ring indicator.
 - scripts/session-menu.sh uses systemctl and assumes systemd.
+- scripts/dns-menu.sh uses nmcli and assumes NetworkManager is managing the active connection.
 - scripts/wallpaper-selector.sh expects wal and a wallpaper directory via WALLPAPERDIR or ~/Wallpapers.
