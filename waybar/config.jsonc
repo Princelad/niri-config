@@ -113,7 +113,7 @@
         "bluetooth": {
             "format": "",
             "format-disabled": "󰂲",
-            "format-connected": " {device_alias}",
+            "format-connected": "󰂱 {device_alias}",
             "tooltip-format": "{controller_alias}\n{num_connections} connected",
             "on-click": "alacritty -e bluetui"
         },
@@ -123,15 +123,15 @@
                 "critical": 15
             },
             "format": "{icon} {capacity}%",
-            "format-charging": " {capacity}%",
+            "format-charging": "󰂄 {capacity}%",
             "format-plugged": " {capacity}%",
-            "format-full": " 100%",
+            "format-full": "󰁹 100%",
             "format-icons": [
-                "",
-                "",
-                "",
-                "",
-                ""
+                "󰁺",
+                "󰁼",
+                "󰁾",
+                "󰂀",
+                "󰂂"
             ],
             "tooltip-format": "{capacity}% ({timeTo})"
         },
