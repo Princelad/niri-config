@@ -68,7 +68,6 @@ input {
     }
 
     // disable-power-key-handling
-    warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="10%"
     workspace-auto-back-and-forth
 
