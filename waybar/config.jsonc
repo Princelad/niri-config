@@ -102,7 +102,7 @@
             "on-click": "alacritty -e wlctl"
         },
         "power-profiles-daemon": {
-            "format": "{icon} ",
+            "format": "{icon}",
             "tooltip-format": "Power mode: {profile}",
             "format-icons": {
                 "performance": "",
