@@ -6,7 +6,7 @@ layout {
     gaps 10
     center-focused-column "on-overflow"
     always-center-single-column
-    default-column-display "tabbed"
+    default-column-display "normal"
 
     tab-indicator {
         hide-when-single-tab
