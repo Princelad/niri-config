@@ -12,7 +12,7 @@ binds {
     Mod+Shift+B hotkey-overlay-title="Bluetooth TUI: bluetui" { spawn "alacritty" "-e" "bluetui"; }
     Mod+Shift+W hotkey-overlay-title="Wi-Fi TUI: wlctl" { spawn "alacritty" "-e" "wlctl"; }
     Mod+Shift+A hotkey-overlay-title="Audio Mixer TUI: wiremix" { spawn "alacritty" "-e" "wiremix"; }
-    Mod+Shift+D hotkey-overlay-title="DNS Menu" { spawn-sh "~/.config/niri/scripts/dns-menu.sh"; }
+    Mod+Shift+S hotkey-overlay-title="Settings Menu" { spawn-sh "~/.config/niri/scripts/settings-menu.sh"; }
     Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "~/.config/niri/scripts/lock-screen.sh"; }
     Mod+O { toggle-overview; }
 
