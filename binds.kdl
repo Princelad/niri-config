@@ -7,7 +7,7 @@ binds {
     Mod+Shift+P hotkey-overlay-title="Power Profile Menu" { spawn-sh "~/.config/niri/scripts/power-profile-menu.sh"; }
     Mod+W hotkey-overlay-title="Wallpaper Selector" { spawn-sh "~/.config/niri/scripts/wallpaper-selector.sh"; }
     Mod+E hotkey-overlay-title="File Manager: thunar" { spawn "thunar"; }
-    Mod+B hotkey-overlay-title="Browser: firefox" { spawn "firefox"; }
+    Mod+B hotkey-overlay-title="Browser: helium-browser" { spawn "helium-browser"; }
     Mod+M hotkey-overlay-title="Music: spotify" { spawn "spotify"; }
     Mod+Shift+B hotkey-overlay-title="Bluetooth TUI: bluetui" { spawn "alacritty" "-e" "bluetui"; }
     Mod+Shift+W hotkey-overlay-title="Wi-Fi TUI: wlctl" { spawn "alacritty" "-e" "wlctl"; }
