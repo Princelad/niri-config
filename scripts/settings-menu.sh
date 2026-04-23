@@ -7,6 +7,7 @@ SCRIPT_DIR="${HOME}/.config/niri/scripts"
 options=(
     "Session Menu"
     "Power Profile Menu"
+    "Display Management"
     "Wallpaper Selector"
     "DNS Menu"
     "Lock Screen"
@@ -20,6 +21,9 @@ case "${choice}" in
         ;;
     "Power Profile Menu")
         exec "${SCRIPT_DIR}/power-profile-menu.sh"
+        ;;
+    "Display Management")
+        exec "${SCRIPT_DIR}/display-menu.sh"
         ;;
     "Wallpaper Selector")
         exec "${SCRIPT_DIR}/wallpaper-selector.sh"
