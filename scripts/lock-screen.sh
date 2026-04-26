@@ -1,6 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+DAEMONIZE=0
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --daemonize)
+            DAEMONIZE=1
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1" >&2
+            echo "Usage: $0 [--daemonize]" >&2
+            exit 2
+            ;;
+    esac
+done
+
 # Resolve pywal colors file location.
 get_pywal_file() {
     local cache_file="${HOME}/.cache/wal/colors.json"
@@ -46,6 +62,11 @@ if ! command -v swaylock >/dev/null 2>&1; then
     exit 1
 fi
 
+# Avoid spawning nested lock screens when multiple lock events fire.
+if pgrep -x swaylock >/dev/null 2>&1; then
+    exit 0
+fi
+
 # Check if jq is available for JSON parsing
 if ! command -v jq >/dev/null 2>&1; then
     echo "jq is not installed (required for pywal integration)." >&2
@@ -58,22 +79,29 @@ ACCENT_COLOR=$(get_pywal_color "color4" "00bfff")         # Highlight color
 ERROR_COLOR=$(get_pywal_color "color1" "ff0000")           # Error/wrong color
 BACKGROUND_COLOR=$(get_pywal_special_color "background" "000000") # Background
 
-# Execute swaylock with pywal-integrated colors
-exec swaylock \
-    --screenshots \
-    --clock \
-    --timestr '%H:%M' \
-    --datestr '%A, %B %-d' \
-    --font-size 42 \
-    --text-color "$TEXT_COLOR" \
-    --text-ver-color "$ACCENT_COLOR" \
-    --text-clear-color "$TEXT_COLOR" \
-    --text-wrong-color "$ERROR_COLOR" \
-    --text-caps-lock-color "$ACCENT_COLOR" \
-    --ring-color "${ACCENT_COLOR}33" \
-    --line-color "${ACCENT_COLOR}00" \
-    --inside-color "${BACKGROUND_COLOR}00" \
-    --key-hl-color "$ACCENT_COLOR" \
-    --bs-hl-color "$ERROR_COLOR" \
-    --effect-blur 7x5 \
+swaylock_args=(
+    --screenshots
+    --clock
+    --timestr '%-I:%M %p'
+    --datestr '%A, %B %-d'
+    --font-size 42
+    --text-color "$TEXT_COLOR"
+    --text-ver-color "$ACCENT_COLOR"
+    --text-clear-color "$TEXT_COLOR"
+    --text-wrong-color "$ERROR_COLOR"
+    --text-caps-lock-color "$ACCENT_COLOR"
+    --ring-color "${ACCENT_COLOR}33"
+    --line-color "${ACCENT_COLOR}00"
+    --inside-color "${BACKGROUND_COLOR}00"
+    --key-hl-color "$ACCENT_COLOR"
+    --bs-hl-color "$ERROR_COLOR"
+    --effect-blur 7x5
     --effect-vignette 0.4:0.7
+)
+
+if [[ "$DAEMONIZE" -eq 1 ]]; then
+    swaylock_args+=(--daemonize)
+fi
+
+# Execute swaylock with pywal-integrated colors
+exec swaylock "${swaylock_args[@]}"

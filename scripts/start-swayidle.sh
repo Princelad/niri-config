@@ -29,9 +29,11 @@ fi
 
 log "Starting: lock=${LOCK_TIMEOUT}s, suspend=${SUSPEND_TIMEOUT}s"
 
+LOCK_CMD="$LOCK_SCRIPT --daemonize"
+SUSPEND_CMD="$LOCK_SCRIPT --daemonize && systemctl suspend"
+
 # -- Launch ------------------------------------------------------------------
 exec swayidle -w \
-    timeout "$LOCK_TIMEOUT"    "$LOCK_SCRIPT" \
-    timeout "$SUSPEND_TIMEOUT" "systemctl suspend" \
-    before-sleep               "$LOCK_SCRIPT" \
-    after-resume               "$(command -v swaylock 2>/dev/null && echo "pkill -USR1 swaylock" || true)"
+    timeout "$LOCK_TIMEOUT"    "$LOCK_CMD" \
+    timeout "$SUSPEND_TIMEOUT" "$SUSPEND_CMD" \
+    before-sleep               "$LOCK_CMD"
