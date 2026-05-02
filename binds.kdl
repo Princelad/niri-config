@@ -1,51 +1,51 @@
 binds {
     
-    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+P hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "~/.config/niri/scripts/launcher.sh"; }
-    Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/.config/niri/scripts/clipboard-menu.sh"; }
-    Mod+Escape hotkey-overlay-title="Session Menu" { spawn-sh "~/.config/niri/scripts/session-menu.sh"; }
-    Mod+Shift+P hotkey-overlay-title="Power Profile Menu" { spawn-sh "~/.config/niri/scripts/power-profile-menu.sh"; }
-    Mod+W hotkey-overlay-title="Wallpaper Selector" { spawn-sh "~/.config/niri/scripts/wallpaper-selector.sh"; }
-    Mod+E hotkey-overlay-title="File Manager: thunar" { spawn "thunar"; }
-    Mod+B hotkey-overlay-title="Browser: firefox" { spawn "firefox"; }
-    Mod+M hotkey-overlay-title="Music: spotify" { spawn "spotify"; }
-    Mod+Shift+B hotkey-overlay-title="Bluetooth TUI: bluetui" { spawn "alacritty" "-e" "bluetui"; }
-    Mod+Shift+W hotkey-overlay-title="Wi-Fi TUI: wlctl" { spawn "alacritty" "-e" "wlctl"; }
-    Mod+Shift+A hotkey-overlay-title="Audio Mixer TUI: wiremix" { spawn "alacritty" "-e" "wiremix"; }
-    Mod+Shift+S hotkey-overlay-title="Settings Menu" { spawn-sh "~/.config/niri/scripts/settings-menu.sh"; }
-    Mod+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "~/.config/niri/scripts/lock-screen.sh"; }
-    Mod+O { toggle-overview; }
+    Mod+Return  { spawn "alacritty"; }
+    Mod+P       { spawn-sh "~/.config/niri/scripts/launcher.sh"; }
+    Mod+V       { spawn-sh "~/.config/niri/scripts/clipboard-menu.sh"; }
+    Mod+Escape  { spawn-sh "~/.config/niri/scripts/session-menu.sh"; }
+    Mod+Shift+P { spawn-sh "~/.config/niri/scripts/power-profile-menu.sh"; }
+    Mod+W       { spawn-sh "~/.config/niri/scripts/wallpaper-selector.sh"; }
+    Mod+E       { spawn "thunar"; }
+    Mod+B       { spawn "brave-origin-beta"; }
+    Mod+M       { spawn "spotify"; }
+    Mod+Shift+B { spawn "alacritty" "-e" "bluetui"; }
+    Mod+Shift+W { spawn "alacritty" "-e" "wlctl"; }
+    Mod+Shift+A { spawn "alacritty" "-e" "wiremix"; }
+    Mod+Shift+S { spawn-sh "~/.config/niri/scripts/settings-menu.sh"; }
+    Mod+Shift+L { spawn-sh "~/.config/niri/scripts/lock-screen.sh"; }
+    Mod+O       { toggle-overview; }
 
-    XF86AudioRaiseVolume { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    XF86AudioLowerVolume { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume    { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume    { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute           { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute        { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     XF86AudioPlay { spawn-sh "playerctl play-pause"; }
     XF86AudioStop { spawn-sh "playerctl stop"; }
     XF86AudioPrev { spawn-sh "playerctl previous"; }
     XF86AudioNext { spawn-sh "playerctl next"; }
 
-    XF86MonBrightnessUp { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp     { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown   { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Print       { screenshot; }
+    Ctrl+Print  { screenshot-screen; }
+    Alt+Print   { screenshot-window; }
 
     Mod+Shift+Q { close-window; }
 
-    Mod+F { maximize-column; }
+    Mod+F       { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
-    Mod+H { focus-column-left; }
-    Mod+J { focus-window-down; }
-    Mod+K { focus-window-up; }
-    Mod+L { focus-column-right; }
-    Mod+Left { focus-column-left; }
-    Mod+Down { focus-window-down; }
-    Mod+Up { focus-window-up; }
-    Mod+Right { focus-column-right; }
+    Mod+H       { focus-column-left; }
+    Mod+J       { focus-window-down; }
+    Mod+K       { focus-window-up; }
+    Mod+L       { focus-column-right; }
+    Mod+Left    { focus-column-left; }
+    Mod+Down    { focus-window-down; }
+    Mod+Up      { focus-window-up; }
+    Mod+Right   { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
@@ -78,10 +78,10 @@ binds {
     Mod+Shift+9 { move-column-to-workspace 9; }
     Mod+Shift+0 { move-column-to-workspace 10; }
 
-    Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-column-right; }
-    Mod+Shift+WheelScrollUp cooldown-ms=150 { focus-column-left; }
-    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Shift+WheelScrollDown cooldown-ms=150   { focus-column-right; }
+    Mod+Shift+WheelScrollUp cooldown-ms=150     { focus-column-left; }
+    Mod+WheelScrollDown cooldown-ms=150         { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150           { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150    { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150      { move-column-to-workspace-up; }
 }
