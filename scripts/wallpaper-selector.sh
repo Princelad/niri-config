@@ -34,5 +34,5 @@ if [[ ! -f "${image}" ]]; then
     exit 1
 fi
 
-wal -i "${image}" >/dev/null 2>&1
+wal -i "${image}" --cols16 foxify-darken --contrast 2.0 --saturate 0.25 >/dev/null 2>&1
 notify-send "Wallpaper" "Applied: ${choice}"
