@@ -18,12 +18,8 @@
         "niri/workspaces": {
             "format": "{icon}",
             "format-icons": {
-                "1": "󰲠",
-                "2": "󰲢",
-                "3": "󰲤",
-                "4": "󰲦",
-                "Spotify": "",
-                "default": ""
+                "active": "",
+                "default": ""
             },
             "hide-empty": true,
             "on-click": "activate"

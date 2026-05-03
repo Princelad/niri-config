@@ -2,31 +2,6 @@
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-workspace "1"
-workspace "2"
-workspace "3"
-workspace "4"
-workspace "Spotify"
-
-window-rule {
-    match app-id="^Spotify$"
-    open-maximized true
-    open-focused true
-    open-on-workspace "Spotify"
-}
-
-// Firefox: open picture-in-picture windows as floating by default.
-window-rule {
-    match app-id="firefox$" title="^Picture-in-Picture$"
-    open-floating true
-}
-
-// Firefox extensions often open compact utility windows; float those.
-window-rule {
-    match app-id="firefox$" title="^Extension:"
-    open-floating true
-}
-
 window-rule {
     geometry-corner-radius 6
     clip-to-geometry true
