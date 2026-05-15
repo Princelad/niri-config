@@ -11,6 +11,7 @@ options=(
     "Wallpaper Selector"
     "DNS Menu"
     "Lock Screen"
+    "Toggle Idle Inhibit"
 )
 
 choice="$(printf "%s\n" "${options[@]}" | fuzzel --dmenu --config "${FUZZEL_CONFIG}" --prompt "Settings> ")"
@@ -33,6 +34,9 @@ case "${choice}" in
         ;;
     "Lock Screen")
         exec "${SCRIPT_DIR}/lock-screen.sh"
+        ;;
+    "Toggle Idle Inhibit")
+        exec "${SCRIPT_DIR}/idle-inhibit.sh" toggle
         ;;
     *)
         exit 0
